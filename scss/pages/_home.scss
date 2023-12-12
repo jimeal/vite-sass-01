@@ -1,0 +1,96 @@
+@use './../common' as *;
+@use './../components' as *;
+
+.promotion {
+  &__title {
+    @include sr-only;
+  }
+
+  &__area {
+    @include flex-container(column items-center);
+    @include gap(rem(24));
+    @include py(em(50));
+  }
+
+  &__description {
+    line-height: 1.5;
+
+    &--large {
+      @include flex-container(column items-center);
+      @include font(size rem(34) weight 700 lh 1.25);
+      // font-size: clamp(rem(24), calc(1rem + 3vw), rem(48));
+
+      @include mq(2xl) {
+        @include font(size rem(60));
+      }
+    }
+
+    &--medium {
+      @include font(size rem(18));
+      @include flex-container(column items-center);
+
+      @include mq(2xl) {
+        @include font(size rem(20));
+        flex-direction: row;
+      }
+    }
+
+    &--small {
+      text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.55);
+      @include font(size rem(14));
+      @include flex-container(column items-center);
+
+      @include mq(2xl) {
+        @include font(size rem(16));
+      }
+    }
+
+    &--xsmall {
+      @include font(size rem(12));
+
+      @include mq(2xl) {
+        @include font(size rem(16));
+      }
+    }
+  }
+}
+
+.membership-form {
+  &__area {
+    display: grid;
+    grid-template-rows: repeat(2, rem(40));
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    row-gap: rem(12);
+
+    @include mq(2xl) {
+      grid-template-rows: repeat(1, rem(60));
+      grid-template-columns: 1fr auto;
+      row-gap: 0;
+    }
+  }
+
+  .form-input__input {
+    @include rounded(rem(20));
+    @include size(100%, 100%);
+    min-width: rem(245);
+
+    @include mq(2xl) {
+      @include rounded(0);
+      min-width: rem(540);
+    }
+  }
+
+  .button-membership {
+    @include rounded(rem(20));
+    @include size(auto, 100%);
+
+    @include flex-container(row items-center);
+    @include gap(rem(10px));
+    @include px(em(40));
+
+    @include mq(2xl) {
+      @include rounded(0);
+    }
+  }
+}
