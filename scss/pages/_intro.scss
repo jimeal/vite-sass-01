@@ -2,7 +2,8 @@
 @use "./../common/mixins" as *;
 
 .intro {
-  background: $black;
+  // background: $black;
+  background: yellow;
 }
 
 @keyframes scaleUp {
