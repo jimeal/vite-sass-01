@@ -2,8 +2,7 @@
 @use "./../common/mixins" as *;
 
 .intro {
-  // background: $black;
-  background: yellow;
+  background: $black;
 }
 
 @keyframes scaleUp {
@@ -20,7 +19,7 @@
 
 .splash {
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
